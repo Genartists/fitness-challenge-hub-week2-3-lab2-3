@@ -15,7 +15,7 @@ import jakarta.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 public class WorkoutLog {
-    private long id;
+    private Long id;
     
     private Date createdAt = new Date();
 

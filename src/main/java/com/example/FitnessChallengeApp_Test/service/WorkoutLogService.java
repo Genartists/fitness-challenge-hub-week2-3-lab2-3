@@ -26,9 +26,16 @@ public class WorkoutLogService {
 
     public WorkoutLog addLog(WorkoutLog workoutLog, Challenge challenge) {
         workoutLog.setId(idGenerator.incrementAndGet());
-        workoutLog.setChallengeId(challenge.getId());
-        workoutLog.setChallengeTitle(challenge.getTitle());
+        if (challenge != null) {
+            workoutLog.setChallengeId(challenge.getId());
+            workoutLog.setChallengeTitle(challenge.getTitle());
+        }
+        
         workoutLogs.add(workoutLog);
         return workoutLog;
+    }
+
+    public List<String> getIntensityLevels() {
+        return List.of("Low", "Moderate", "High", "Extreme");
     }
 }
